@@ -23,6 +23,23 @@ VALUES('Charmander', '2020-02-08', 0, false,-11,NULL),
 
 -- Query multiple tables
 
+INSERT INTO owners(full_name,age) 
+VALUES('Sam Smith', 34),
+     ('Jennifer Orwell', 19),
+     ('BOB', 45),
+     ('Melody Pond', 77),
+     ('Dan Winchester', 14),
+     ('Jodie Whittaker', 38);
+
+
+     INSERT INTO species(name) 
+VALUES('Pokemon'),
+     ('Digimon');
+
+
+
+
+
 UPDATE animals
 SET species_id = (
     SELECT id FROM species
