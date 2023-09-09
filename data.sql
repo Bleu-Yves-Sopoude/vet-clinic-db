@@ -114,6 +114,7 @@ INSERT INTO specializations (species_id, vet_id)
 VALUES (2, 4);
 
 INSERT INTO visits(animal_id, vet_id, date_of_visit) VALUES(1, 1, date '2020-05-24');
+INSERT INTO visits(animal_id, vet_id, date_of_visit) VALUES(1, 1, date '2020-07-22');
 
 INSERT INTO visits(animal_id, vet_id, date_of_visit) VALUES(1, 3, date '2020-07-22');
 INSERT INTO visits(animal_id, vet_id, date_of_visit) VALUES(2, 4, date '2021-02-02');

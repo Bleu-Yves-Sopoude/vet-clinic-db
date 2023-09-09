@@ -97,3 +97,5 @@ ALTER TABLE visits
 ADD CONSTRAINT fk_animal
 FOREIGN KEY (animal_id)
 REFERENCES animals(id);
+
+ALTER TABLE visit ADD COLUMN date_of_visit DATE;
