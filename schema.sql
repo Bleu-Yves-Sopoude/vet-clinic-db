@@ -26,7 +26,6 @@ age INT,
 
 PRIMARY KEY (id)
 
-
 );
 
 
@@ -58,3 +57,45 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_owner
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+
+
+CREATE TABLE vets(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR NOT NULL,
+    age INT,
+    date_of_graduation DATE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE specializations(
+    vet_id INT NOT NULL,
+    species_id INT NOT NULL
+);
+
+ALTER TABLE specializations
+ADD CONSTRAINT fk_vet
+FOREIGN KEY (vet_id)
+REFERENCES vets(id);
+
+ALTER TABLE specializations
+ADD CONSTRAINT fk_species
+FOREIGN KEY (species_id)
+REFERENCES species(id);
+
+CREATE TABLE visits(
+    vet_id INT NOT NULL,
+    animal_id INT NOT NULL
+)
+
+ALTER TABLE visits
+ADD CONSTRAINT fk_vet
+FOREIGN KEY (vet_id)
+REFERENCES vets(id);
+
+ALTER TABLE visits
+ADD CONSTRAINT fk_animal
+FOREIGN KEY (animal_id)
+REFERENCES animals(id);
+
+ALTER TABLE visit ADD COLUMN date_of_visit DATE;
